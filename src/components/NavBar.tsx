@@ -2,8 +2,17 @@ import { useEffect, useState } from "react";
 import MainButton from "./MainButton";
 import BurgerButton from "./BurgerButton";
 
-export default function NavBar() {
+interface NavBarProps {
+  onNavigate?: (sectionId: string) => void;
+}
+
+export default function NavBar({ onNavigate }: NavBarProps) {
   const [isSticky, setIsSticky] = useState(false);
+  
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    onNavigate?.(sectionId);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,8 +54,9 @@ export default function NavBar() {
                 About
               </a>
               <a
-                href={"/"}
-                className="text-main-text hover:text-primary lg:text-xl"
+                href="#Skills"
+                onClick={(e) => handleNavClick(e, "Skills")}
+                className="text-main-text hover:text-primary lg:text-xl cursor-pointer"
               >
                 Skills
               </a>

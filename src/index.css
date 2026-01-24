@@ -8,11 +8,11 @@
   color: #fff;
 
   --primary: #7cb7ff;
-  --secondary: #8b93ff;
+  --secondary: #cfe3ff;
   --accent: #38e8ff;
 
-  --text-main: #e6edff;
-  --text-muted: #9aa4b2;
+  --main: #e6edff;
+  --muted: #9aa4b2;
 
   --border-soft: rgba(20,20,20,0.2);
 }
@@ -23,7 +23,7 @@
   --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-border-c: var(--border-soft);
-  --color-text-main: var(--text-main);
+  --color-text-main: var(--main);
 }
 
 
@@ -107,8 +107,4 @@ body,
   text-align: center;
 }
 
-h1 {
-  font-size: clamp(3rem, 6vw, 5rem);
-  letter-spacing: 0.05em;
-}
 

@@ -36,7 +36,8 @@ export default function NavBar({ onNavigate }: NavBarProps) {
           >
             <div>
               <a
-                href="/"
+                href="#Hero"
+                onClick={(e) => handleNavClick(e, "Hero")}
                 className="lg:ml-20 h-15 w-25 lg:w-30 transition hover:scale-110 flex items-center justify-center"
               >
                 <img
@@ -48,7 +49,8 @@ export default function NavBar({ onNavigate }: NavBarProps) {
             </div>
             <nav className="hidden md:flex lg:flex items-center gap-4">
               <a
-                href={"/"}
+                href="#About"
+                onClick={(e) => handleNavClick(e, "About")}
                 className="text-main-text hover:text-primary lg:text-xl"
               >
                 About
@@ -67,8 +69,9 @@ export default function NavBar({ onNavigate }: NavBarProps) {
                 Projects
               </a>
               <a
-                href={"/"}
-                className="text-main-text hover:text-primary lg:text-xl"
+                href="#Contact"
+                onClick={(e) => handleNavClick(e, "Contact")}
+                className="text-main-text hover:text-primary lg:text-xl cursor-pointer"
               >
                 Contact
               </a>

@@ -26,7 +26,7 @@ export default function SkillsSection() {
     <div id="Skills">
       <div>
         <h3 className="relative -top-3.5 text-sm font-semibold uppercase tracking-[0.3em] text-primary/80">
-          Skills
+          Skills<span className="text-accent text-2xl">.</span>
         </h3>
       </div>
       <motion.div

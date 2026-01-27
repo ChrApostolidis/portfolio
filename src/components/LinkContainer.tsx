@@ -24,7 +24,7 @@ export default function LinkContainer() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="flex gap-2">
+        <div className="flex flex-col lg:flex-row gap-2">
           <LinkComponent
             href="https://www.linkedin.com/in/xristos-apostolidis-5aa0912ab/"
             icon={FaLinkedin}
@@ -36,7 +36,7 @@ export default function LinkContainer() {
             label="Github"
           />
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-col lg:flex-row gap-2">
           <LinkComponent
             href="mailto:xrsapostolidis@gmail.com"
             icon={MdEmail}

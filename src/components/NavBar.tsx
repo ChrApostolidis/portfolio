@@ -63,7 +63,8 @@ export default function NavBar({ onNavigate }: NavBarProps) {
                 Skills
               </a>
               <a
-                href={"/"}
+                href="#Projects"
+                onClick={(e) => handleNavClick(e, "Projects")}
                 className="text-main-text hover:text-primary lg:text-xl"
               >
                 Projects

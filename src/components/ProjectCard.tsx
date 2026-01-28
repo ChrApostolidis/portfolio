@@ -1,13 +1,13 @@
 import TechStackCard from "./TechStackCard";
 
-type ProjectCardProps = {
+export type ProjectCardProps = {
   url: string;
   title: string;
   description: string;
   techStack: string[];
   demoLink: string;
   githubLink: string;
-  alingLeftOrRight: "left" | "right";
+  alingLeftOrRight: string;
 };
 
 export default function ProjectCard({
@@ -23,7 +23,7 @@ export default function ProjectCard({
     <>
       {alingLeftOrRight === "left" ? (
         <>
-          <div className="relative max-w-lg mx-auto lg:mx-0">
+          <div className="relative max-w-md mx-auto lg:mx-0">
             <div className="absolute inset-0 bg-linear-to-tr from-cyan-500/20 to-transparent rounded-2xl blur-2xl"></div>
             <img
               className="relative w-full rounded-2xl shadow-xl border border-white/10"
@@ -98,8 +98,8 @@ export default function ProjectCard({
             </div>
           </div>
 
-          <div className="relative max-w-lg mx-auto lg:mx-0">
-            <div className="absolute inset-0 bg-linear-to-tr from-cyan-500/20 to-transparent rounded-2xl blur-2xl"></div>
+          <div className="relative max-w-md mx-auto lg:mx-0">
+            <div className="absolute inset-0 bg-linear-to-tl from-cyan-500/20 to-transparent rounded-2xl blur-2xl"></div>
             <img
               className="relative w-full rounded-2xl shadow-xl border border-white/10"
               src={url}

@@ -30,7 +30,7 @@ export default function NavBar({ onNavigate }: NavBarProps) {
              `}
         >
           <div
-            className={`${isSticky ? "border-border-soft" : "border-transparent"} transition-all duration-500 lg:border 
+            className={`${isSticky ? "border-white/40" : "border-transparent"} transition-all duration-500 lg:border 
             rounded-3xl p-2 flex justify-between items-center w-full 
             lg:justify-center lg:space-x-20`}
           >

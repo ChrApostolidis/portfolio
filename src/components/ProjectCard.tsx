@@ -1,4 +1,5 @@
 import TechStackCard from "./TechStackCard";
+import { motion } from "framer-motion";
 
 export type ProjectCardProps = {
   url: string;
@@ -8,6 +9,16 @@ export type ProjectCardProps = {
   demoLink: string;
   githubLink: string;
   alingLeftOrRight: string;
+};
+
+const imageVariants = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
+};
+
+const textVariants = {
+  hidden: { opacity: 0, x: 100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
 };
 
 export default function ProjectCard({
@@ -23,16 +34,28 @@ export default function ProjectCard({
     <>
       {alingLeftOrRight === "left" ? (
         <>
-          <div className="relative max-w-md mx-auto lg:mx-0">
+          <motion.div
+            variants={imageVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.7 }}
+            className="relative max-w-md mx-auto lg:mx-0"
+          >
             <div className="absolute inset-0 bg-linear-to-tr from-cyan-500/20 to-transparent rounded-2xl blur-2xl"></div>
             <img
               className="relative w-full rounded-2xl shadow-xl border border-white/10"
               src={url}
               alt={`Image of the ${title}`}
             />
-          </div>
+          </motion.div>
 
-          <div className="space-y-6 text-center lg:text-left">
+          <motion.div
+            variants={textVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.7 }}
+            className="space-y-6 text-center lg:text-left"
+          >
             <h4 className="text-3xl font-bold tracking-tight">{title}</h4>
 
             <p className="text-gray-400 leading-relaxed">{description}</p>
@@ -62,11 +85,15 @@ export default function ProjectCard({
                 View GitHub
               </a>
             </div>
-          </div>
+          </motion.div>
         </>
       ) : (
         <>
-          <div className="space-y-6 text-center lg:text-left">
+          <motion.div
+           variants={imageVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.7 }} className="space-y-6 text-center lg:text-left">
             <h4 className="text-3xl font-bold tracking-tight">{title}</h4>
 
             <p className="text-gray-400 leading-relaxed">{description}</p>
@@ -96,16 +123,22 @@ export default function ProjectCard({
                 View GitHub
               </a>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="relative max-w-md mx-auto lg:mx-0">
+          <motion.div
+            variants={textVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.7 }}
+            className="relative max-w-md mx-auto lg:mx-0"
+          >
             <div className="absolute inset-0 bg-linear-to-tl from-cyan-500/20 to-transparent rounded-2xl blur-2xl"></div>
             <img
               className="relative w-full rounded-2xl shadow-xl border border-white/10"
               src={url}
               alt={`Image of the ${title}`}
             />
-          </div>
+          </motion.div>
         </>
       )}
     </>

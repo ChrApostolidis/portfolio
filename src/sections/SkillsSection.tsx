@@ -1,25 +1,19 @@
-import { AnimatePresence, motion, type Variants } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { SkillsData } from "../data";
 export default function SkillsSection() {
-  const cardVariants: Variants = {
+  const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        duration: 0.4,
-        ease: "easeOut",
+        staggerChildren: 0.2,
       },
     },
   };
 
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
@@ -32,7 +26,7 @@ export default function SkillsSection() {
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
         <h3 className="text-3xl text-center font-bold">My Main Stack</h3>

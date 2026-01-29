@@ -38,7 +38,7 @@ export default function ProjectCard({
             variants={imageVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.7 }}
+            viewport={{ once: true, amount: 1 }}
             className="relative max-w-md mx-auto lg:mx-0"
           >
             <div className="absolute inset-0 bg-linear-to-tr from-cyan-500/20 to-transparent rounded-2xl blur-2xl"></div>
@@ -53,7 +53,7 @@ export default function ProjectCard({
             variants={textVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.7 }}
+            viewport={{ once: true, amount: 1 }}
             className="space-y-6 text-center lg:text-left"
           >
             <h4 className="text-3xl font-bold tracking-tight">{title}</h4>
@@ -93,7 +93,7 @@ export default function ProjectCard({
            variants={imageVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.7 }} className="space-y-6 text-center lg:text-left">
+            viewport={{ once: true, amount: 1 }} className="space-y-6 text-center lg:text-left">
             <h4 className="text-3xl font-bold tracking-tight">{title}</h4>
 
             <p className="text-gray-400 leading-relaxed">{description}</p>

@@ -1,5 +1,6 @@
 import ProjectCard, { type ProjectCardProps } from "../components/ProjectCard";
 
+
 export default function ProjectsSection({
   projectData,
   showHeader = true,

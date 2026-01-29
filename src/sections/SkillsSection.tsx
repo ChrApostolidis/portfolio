@@ -1,5 +1,5 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { SkillsData } from "../data";
+import { motion } from "framer-motion";
+import { SkillsData } from "../data/data";
 export default function SkillsSection() {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -17,27 +17,27 @@ export default function SkillsSection() {
   };
 
   return (
-    <div id="Skills">
+    <div id="Skills" className="mt-10 max-w-5xl mx-10 lg:mx-0">
       <div>
         <h3 className="relative -top-3.5 text-sm font-semibold uppercase tracking-[0.3em] text-primary/80">
           Skills<span className="text-accent text-2xl">.</span>
         </h3>
       </div>
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <h3 className="text-3xl text-center font-bold">My Main Stack</h3>
-      </motion.div>
-      <AnimatePresence mode="wait">
+      <div className="mx-10">
         <motion.div
-          className="mt-4 grid gap-2 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 justify-items-center"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 1 }}
+        >
+          <h3 className="text-3xl text-center font-bold">My Main Stack</h3>
+        </motion.div>
+        <motion.div
+          className="mt-4 grid gap-2 grid-cols-2 md:grid-cols-4 lg:grid-cols-7 justify-items-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 1 }}
         >
           {SkillsData["MainStack"].map((skill) => {
             const IconComponent = skill.icon;
@@ -46,10 +46,10 @@ export default function SkillsSection() {
                 variants={cardVariants}
                 key={skill.name}
                 className="flex items-center justify-center w-24 h-24 rounded-xl 
-                  border border-primary/50
-                  shadow-md shadow-black/40
-                  hover:border-primary/80 hover:shadow-lg
-                  transition-all duration-300"
+                    border border-primary/50
+                    shadow-md shadow-black/40
+                    hover:border-primary/80 hover:shadow-lg
+                    transition-all duration-300"
               >
                 <IconComponent size={skill.size} color={skill.color} />
               </motion.div>
@@ -60,18 +60,18 @@ export default function SkillsSection() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 1 }}
         >
           <h3 className="mt-4 text-3xl text-center font-bold">
             Experience With
           </h3>
         </motion.div>
         <motion.div
-          className="mt-4 grid gap-2 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 justify-items-center"
+          className="mt-4 grid gap-2 grid-cols-2 md:grid-cols-4 lg:grid-cols-7 justify-items-center transition transform duration-200"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 1 }}
         >
           {SkillsData["Experience"].map((skill) => {
             const IconComponent = skill.icon;
@@ -80,10 +80,10 @@ export default function SkillsSection() {
                 variants={cardVariants}
                 key={skill.name}
                 className="flex items-center justify-center w-24 h-24 rounded-xl 
-                  border border-primary/50
-                  shadow-md shadow-black/40
-                  hover:border-primary/80 hover:shadow-lg
-                  transition-all duration-300"
+                    border border-primary/50
+                    shadow-md shadow-black/40
+                    hover:border-primary/80 hover:shadow-lg
+                    transition-all duration-300"
               >
                 {skill.render === "icon" ? (
                   <IconComponent size={skill.size} color={skill.color} />
@@ -94,7 +94,7 @@ export default function SkillsSection() {
             );
           })}
         </motion.div>
-      </AnimatePresence>
+      </div>
     </div>
   );
 }

@@ -22,7 +22,7 @@ export default function LinkContainer() {
         variants={listVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 1 }}
       >
         <div className="flex flex-col lg:flex-row gap-2">
           <LinkComponent

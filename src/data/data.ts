@@ -11,6 +11,7 @@ import { BiLogoTypescript, BiLogoPostgresql } from "react-icons/bi";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import type { IconType } from "react-icons";
 import { GrMysql } from "react-icons/gr";
+import { DiRedis } from "react-icons/di";
 
 interface SkillWithIcon {
   name: string;
@@ -142,6 +143,13 @@ export const SkillsData: Record<string, Skill[]> = {
       icon: "https://skillicons.dev/icons?i=aws",
       size: 60,
       render: "image",
+    },
+    {
+      name: "Redis",
+      icon: DiRedis,
+      color: "#DC382D",
+      size: 60,
+      render: "icon",
     },
   ],
 };

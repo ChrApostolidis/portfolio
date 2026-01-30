@@ -4,9 +4,14 @@ import { FaLinkedin } from "react-icons/fa";
 
 export default function HeroSection() {
   return (
-    <div id="Hero" className="flex flex-col justify-center items-center gap-4">
+    <div
+      id="Hero"
+      className="flex flex-col justify-center items-center gap-4 pt-25 lg:pt-0"
+    >
       <div className="flex flex-col justify-center items-center gap-2">
-        <h1 className="text-5xl text-center tracking-wider lg:text-7xl">I'm Christos Apostolidis</h1>
+        <h1 className="text-5xl text-center tracking-wider lg:text-7xl">
+          I'm Christos Apostolidis
+        </h1>
         <h2 className="text-3xl lg:text-4xl tracking-wide">Web Developer</h2>
       </div>
       <div className="flex justify-center items-center">
@@ -16,14 +21,26 @@ export default function HeroSection() {
       </div>
       <div className="flex justify-center items-center gap-4 mt-4">
         <MainButton className="bg-primary hover:bg-secondary border-black">
-          Contact Me
+          <a href="#contact">Contact Me</a>
         </MainButton>
         <div className="flex gap-4">
-          <FaGithub size={30} className="hover:text-primary cursor-pointer" />
-          <FaLinkedin
-            size={30}
-            className="hover:text-primary cursor-pointer"
-          />
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/ChrApostolidis"
+          >
+            <FaGithub size={30} className="hover:text-primary cursor-pointer" />
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/xristos-apostolidis-5aa0912ab/"
+          >
+            <FaLinkedin
+              size={30}
+              className="hover:text-primary cursor-pointer"
+            />
+          </a>
         </div>
       </div>
     </div>

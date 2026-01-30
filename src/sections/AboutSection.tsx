@@ -20,8 +20,8 @@ export default function AboutSection() {
 
   return (
     <section id="About" className="mt-10 max-w-5xl">
-      <div className="mx-10 lg:mx-0">
-        <h3 className="relative -top-1.5 text-sm font-semibold uppercase tracking-[0.3em] text-primary/80">
+      <div className="relative flex text-left lg:justify-start items-center ml-4 mb-4 lg:mb-0">
+        <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/80">
           About Me<span className="text-accent text-2xl">.</span>
         </h3>
       </div>
@@ -30,7 +30,7 @@ export default function AboutSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 1 }}
-        className="mt-6 mx-20 space-y-5 max-w-3xl"
+        className="mt-6 lg:mx-20 mx-5 space-y-5 max-w-3xl"
       >
         <p className="border-b pb-4  border-accent text-lg lg:text-2xl font-medium leading-snug">
           Entry-level Web Developer focused on{" "}
@@ -64,13 +64,28 @@ export default function AboutSection() {
         </motion.p>
       </motion.div>
 
-      <div className="my-12 mx-10 flex justify-between items-center gap-4">
+      <div className="my-12 lg:mx-10 mx-5 flex justify-between items-center gap-4">
         <MainButton className="bg-primary hover:bg-secondary border-black">
           Contact Me
         </MainButton>
         <div className="flex gap-4">
-          <FaGithub size={30} className="hover:text-primary cursor-pointer" />
-          <FaLinkedin size={30} className="hover:text-primary cursor-pointer" />
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/ChrApostolidis"
+          >
+            <FaGithub size={30} className="hover:text-primary cursor-pointer" />
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/xristos-apostolidis-5aa0912ab/"
+          >
+            <FaLinkedin
+              size={30}
+              className="hover:text-primary cursor-pointer"
+            />
+          </a>
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
@@ -7,6 +7,8 @@ import HeroSection from "./sections/HeroSection";
 import SkillsSection from "./sections/SkillsSection";
 import ContactSection from "./sections/ContactSection";
 import AboutSection from "./sections/AboutSection";
+import ProjectsSection from "./sections/ProjectsSection";
+import { ProjectsDataFirstSection, ProjectsDataSecondSection } from "./data/ProjectsData";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -14,33 +16,54 @@ const sections = [
   <HeroSection />,
   <AboutSection />,
   <SkillsSection />,
-  "Four",
+  <ProjectsSection projectData={ProjectsDataFirstSection} showHeader={true}/>,
+  <ProjectsSection projectData={ProjectsDataSecondSection} showHeader={false}/>,
   <ContactSection />,
 ];
 
 export default function SnapScroll() {
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
 
   const scrollToSection = (sectionId: string) => {
-    const sectionIndex = sections.findIndex((_, i) => {
-      if (sectionId === "Hero" && i === 0) return true;
-      if (sectionId === "About" && i === 1) return true;
-      if (sectionId === "Skills" && i === 2) return true;
-      if (sectionId === "Contact" && i === 4) return true;
-      return false;
-    });
-
-    if (sectionIndex !== -1) {
-      const scrollPosition = window.innerHeight * sectionIndex;
-      gsap.to(window, {
-        scrollTo: scrollPosition,
-        duration: 0.8,
-        ease: "power2.inOut",
-      });
+    const element = document.getElementById(sectionId);
+    if (element) {
+      if (isDesktop) {
+        const sectionIndex = sections.findIndex((_, i) => {
+          if (sectionId === "Hero" && i === 0) return true;
+          if (sectionId === "About" && i === 1) return true;
+          if (sectionId === "Skills" && i === 2) return true;
+          if (sectionId === "Projects" && i === 3) return true;
+          if (sectionId === "Contact" && i === 5) return true;
+          return false;
+        });
+        
+        if (sectionIndex !== -1) {
+          const scrollPosition = window.innerHeight * sectionIndex;
+          gsap.to(window, {
+            scrollTo: scrollPosition,
+            duration: 0.4,
+            ease: "power2.inOut",
+          });
+        }
+      } else {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
   };
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (!isDesktop) return;
+
     const ctx = gsap.context(() => {
       gsap.to(".panel", {
         yPercent: -100 * (sections.length - 1),
@@ -54,20 +77,22 @@ export default function SnapScroll() {
             duration: 0.3,
             ease: "power2.inOut",
           },
-          end: () => `+=${window.innerHeight * sections.length}`,
+          end: () => `+=${window.innerHeight * (sections.length - 1)}`,
+          pinSpacing: false,
+          invalidateOnRefresh: true,
         },
       });
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [isDesktop]);
 
   return (
     <div className="hero" ref={containerRef}>
       <NavBar onNavigate={scrollToSection} />
       {sections.map((section, i) => (
         <section
-          className={`content panel h-screen w-full flex items-center justify-center`}
+          className="content panel lg:h-screen w-full flex justify-center items-center"
           key={i}
         >
           <div>{section}</div>

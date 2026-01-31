@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import MainButton from "./MainButton";
 import BurgerButton from "./BurgerButton";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 interface NavBarProps {
   onNavigate?: (sectionId: string) => void;
@@ -8,8 +10,12 @@ interface NavBarProps {
 
 export default function NavBar({ onNavigate }: NavBarProps) {
   const [isSticky, setIsSticky] = useState(false);
-  
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
     e.preventDefault();
     onNavigate?.(sectionId);
   };
@@ -80,12 +86,110 @@ export default function NavBar({ onNavigate }: NavBarProps) {
             <div className="hidden md:block lg:block">
               <MainButton>Resume</MainButton>
             </div>
-            <div className="md:hidden flex justify-end">
-              <BurgerButton />
+            <div
+              className={`md:hidden flex justify-end ${isMenuOpen ? "z-10" : ""}`}
+            >
+              <BurgerButton
+                isOpen={isMenuOpen}
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              />
             </div>
           </div>
         </header>
       </div>
+      {isMenuOpen && (
+        <div
+          className={`z-10 fixed h-screen w-58 top-0 ${isMenuOpen ? "right-0" : "right-100"} bg-[#030408] border border-white/30 p-4 flex flex-col justify-between gap-4 md:hidden transform transition-transform duration-200`}
+        >
+          <div className="flex">
+            <MainButton>Resume</MainButton>
+          </div>
+          <nav className="flex flex-col text-left text-3xl gap-4">
+            <a
+              href="#Hero"
+              onClick={(e) => {
+                handleNavClick(e, "Hero");
+                setIsMenuOpen(false);
+              }}
+              className="text-main-text hover:text-primary"
+            >
+              Home
+            </a>
+            <a
+              href="#About"
+              onClick={(e) => {
+                handleNavClick(e, "About");
+                setIsMenuOpen(false);
+              }}
+              className="text-main-text hover:text-primary"
+            >
+              About
+            </a>
+            <a
+              href="#Skills"
+              onClick={(e) => {
+                handleNavClick(e, "Skills");
+                setIsMenuOpen(false);
+              }}
+              className="text-main-text hover:text-primary"
+            >
+              Skills
+            </a>
+            <a
+              href="#Projects"
+              onClick={(e) => {
+                handleNavClick(e, "Projects");
+                setIsMenuOpen(false);
+              }}
+              className="text-main-text hover:text-primary"
+            >
+              Projects
+            </a>
+            <a
+              href="#Contact"
+              onClick={(e) => {
+                handleNavClick(e, "Contact");
+                setIsMenuOpen(false);
+              }}
+              className="text-main-text hover:text-primary"
+            >
+              Contact
+            </a>
+          </nav>
+          <div className="flex justify-center items-center gap-8">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/ChrApostolidis"
+            >
+              <FaGithub
+                size={30}
+                className="hover:text-primary cursor-pointer"
+              />
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/xristos-apostolidis-5aa0912ab/"
+            >
+              <FaLinkedin
+                size={30}
+                className="hover:text-primary cursor-pointer"
+              />
+            </a>
+             <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="mailto:xrsapostolidis@gmail.com"
+            >
+              <MdEmail
+                size={30}
+                className="hover:text-primary cursor-pointer"
+              />
+            </a>
+          </div>
+        </div>
+      )}
     </>
   );
 }

@@ -29,7 +29,11 @@ export default function NavBar({ onNavigate }: NavBarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
- 
+  // Lock scroll when menu is open
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+  }, [isMenuOpen]);
+
   return (
     <>
       <div className={`flex items-center justify-center`}>

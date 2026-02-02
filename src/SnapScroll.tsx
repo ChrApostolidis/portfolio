@@ -8,7 +8,10 @@ import SkillsSection from "./sections/SkillsSection";
 import ContactSection from "./sections/ContactSection";
 import AboutSection from "./sections/AboutSection";
 import ProjectsSection from "./sections/ProjectsSection";
-import { ProjectsDataFirstSection, ProjectsDataSecondSection } from "./data/ProjectsData";
+import {
+  ProjectsDataFirstSection,
+  ProjectsDataSecondSection,
+} from "./data/ProjectsData";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -16,8 +19,11 @@ const sections = [
   <HeroSection />,
   <AboutSection />,
   <SkillsSection />,
-  <ProjectsSection projectData={ProjectsDataFirstSection} showHeader={true}/>,
-  <ProjectsSection projectData={ProjectsDataSecondSection} showHeader={false}/>,
+  <ProjectsSection projectData={ProjectsDataFirstSection} showHeader={true} />,
+  <ProjectsSection
+    projectData={ProjectsDataSecondSection}
+    showHeader={false}
+  />,
   <ContactSection />,
 ];
 
@@ -37,7 +43,7 @@ export default function SnapScroll() {
           if (sectionId === "Contact" && i === 5) return true;
           return false;
         });
-        
+
         if (sectionIndex !== -1) {
           const scrollPosition = window.innerHeight * sectionIndex;
           gsap.to(window, {

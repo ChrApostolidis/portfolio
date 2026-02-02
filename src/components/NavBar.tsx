@@ -4,6 +4,7 @@ import BurgerButton from "./BurgerButton";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { AnimatePresence, motion } from "framer-motion";
+import NavLink from "./NavLink";
 
 interface NavBarProps {
   onNavigate?: (sectionId: string) => void;
@@ -60,34 +61,10 @@ export default function NavBar({ onNavigate }: NavBarProps) {
               </a>
             </div>
             <nav className="hidden md:flex lg:flex items-center gap-4">
-              <a
-                href="#About"
-                onClick={(e) => handleNavClick(e, "About")}
-                className="text-main-text hover:text-primary lg:text-xl"
-              >
-                About
-              </a>
-              <a
-                href="#Skills"
-                onClick={(e) => handleNavClick(e, "Skills")}
-                className="text-main-text hover:text-primary lg:text-xl cursor-pointer"
-              >
-                Skills
-              </a>
-              <a
-                href="#Projects"
-                onClick={(e) => handleNavClick(e, "Projects")}
-                className="text-main-text hover:text-primary lg:text-xl"
-              >
-                Projects
-              </a>
-              <a
-                href="#Contact"
-                onClick={(e) => handleNavClick(e, "Contact")}
-                className="text-main-text hover:text-primary lg:text-xl cursor-pointer"
-              >
-                Contact
-              </a>
+              <NavLink handleNavClick={handleNavClick} sectionId="About" />
+              <NavLink handleNavClick={handleNavClick} sectionId="Skills" />
+              <NavLink handleNavClick={handleNavClick} sectionId="Projects" />
+              <NavLink handleNavClick={handleNavClick} sectionId="Contact" />
             </nav>
             <div className="hidden md:block lg:block">
               <MainButton>Resume</MainButton>

@@ -29,7 +29,7 @@ export default function AboutSection() {
         variants={listVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 1 }}
+        viewport={{ once: true, amount: 0.8 }}
         className="mt-6 lg:mx-20 mx-5 space-y-5 max-w-3xl"
       >
         <p className="border-b pb-4  border-accent text-lg lg:text-2xl font-medium leading-snug">

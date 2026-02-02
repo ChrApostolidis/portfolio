@@ -5,13 +5,13 @@ export default function ContactSection() {
 
 
   return (
-    <div className="lg:mx-50" id="Contact">
+    <div className="lg:mx-50" >
       <div className="relative flex text-left lg:justify-start items-center ml-4 mb-4 lg:mb-8">
         <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/80">
           Contact Me<span className="text-accent text-2xl">.</span>
         </h3>
       </div>
-      <div className="mx-5 lg:mx-15">
+      <div id="Contact" className="mx-5 lg:mx-15">
         <div>
           <h3 className="text-primary text-5xl lg:text-7xl text-center">Get in Touch</h3>
         </div>

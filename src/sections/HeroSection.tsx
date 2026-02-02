@@ -2,7 +2,11 @@ import MainButton from "../components/MainButton";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  onNavigate?: (sectionId: string) => void;
+}
+
+export default function HeroSection({ onNavigate }: HeroSectionProps) {
   return (
     <div
       id="Hero"
@@ -20,8 +24,11 @@ export default function HeroSection() {
         </p>
       </div>
       <div className="flex justify-center items-center gap-4 mt-4">
-        <MainButton className="bg-primary hover:bg-secondary border-black">
-          <a href="#contact">Contact Me</a>
+        <MainButton
+          className="bg-primary hover:bg-[#4F96F0] text-black border-black"
+          onClick={() => onNavigate && onNavigate("Contact")}
+        >
+          <a href="#Contact">Contact Me</a>
         </MainButton>
         <div className="flex gap-4">
           <a

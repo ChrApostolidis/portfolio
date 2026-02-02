@@ -2,7 +2,11 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import MainButton from "../components/MainButton";
 import { motion } from "framer-motion";
 
-export default function AboutSection() {
+interface AboutSectionProps {
+  onNavigate?: (sectionId: string) => void;
+}
+
+export default function AboutSection({ onNavigate }: AboutSectionProps) {
   const listVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -65,7 +69,10 @@ export default function AboutSection() {
       </motion.div>
 
       <div className="my-12 lg:mx-10 mx-5 flex justify-between items-center gap-4">
-        <MainButton className="bg-primary hover:bg-secondary border-black">
+        <MainButton 
+          onClick={() => onNavigate && onNavigate("Contact")}
+          className="bg-primary hover:bg-[#4F96F0] text-black border-black"
+        >
           Contact Me
         </MainButton>
         <div className="flex gap-4">

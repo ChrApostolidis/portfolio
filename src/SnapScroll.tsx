@@ -117,10 +117,27 @@ export default function SnapScroll() {
     }
   };
 
+  const sectionsWithProps = [
+    <HeroSection key={0} onNavigate={scrollToSection} />,
+    <AboutSection key={1} onNavigate={scrollToSection} />,
+    <SkillsSection key={2} />,
+    <ProjectsSection
+      key={3}
+      projectData={ProjectsDataFirstSection}
+      showHeader={true}
+    />,
+    <ProjectsSection
+      key={4}
+      projectData={ProjectsDataSecondSection}
+      showHeader={false}
+    />,
+    <ContactSection key={5} />,
+  ];
+
   return (
     <div className="hero" ref={containerRef}>
       <NavBar onNavigate={scrollToSection} />
-      {sections.map((section, i) => (
+      {sectionsWithProps.map((section, i) => (
         <section
           className="content panel lg:h-screen w-full flex justify-center items-center"
           key={i}

@@ -14,7 +14,7 @@ const MainButton: React.FC<ButtonProps> = ({
   disabled = false,
 }) => {
   const baseStyles =
-    "cursor-pointer mr-8 border-2 border-white/50 rounded-xl px-4 py-2 hover:bg-primary hover:text-black transition disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:opacity-50 cursor-pointer font-semibold py-2 px-6 rounded-lg shadow-md";
+    "cursor-pointer mr-8 border-2 rounded-xl px-4 py-2 transition disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:opacity-50 cursor-pointer font-semibold py-2 px-6 rounded-lg shadow-md";
 
   return (
     <button

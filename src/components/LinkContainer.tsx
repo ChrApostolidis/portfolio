@@ -29,11 +29,13 @@ export default function LinkContainer() {
             href="https://www.linkedin.com/in/xristos-apostolidis-5aa0912ab/"
             icon={FaLinkedin}
             label="Linkedin"
+            downloadLink={false}
           />
           <LinkComponent
             href="https://github.com/ChrApostolidis"
             icon={FaGithub}
             label="Github"
+            downloadLink={false}
           />
         </div>
         <div className="flex flex-col lg:flex-row gap-2">
@@ -41,11 +43,13 @@ export default function LinkContainer() {
             href="mailto:xrsapostolidis@gmail.com"
             icon={MdEmail}
             label="Email"
+            downloadLink={false}
           />
           <LinkComponent
-            href="https://www.linkedin.com/in/xristos-apostolidis-5aa0912ab/"
+            href="/files/resume.pdf"
             icon={IoDocumentText}
             label="Resume"
+            downloadLink={true}
           />
         </div>
       </motion.ul>

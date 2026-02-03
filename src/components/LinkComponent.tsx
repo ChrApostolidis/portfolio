@@ -5,12 +5,14 @@ type LinkComponentProps = {
   href: string;
   icon: React.ComponentType<{ size: number }>;
   label: string;
+  downloadLink: boolean;
 };
 
 export default function LinkComponent({
   href,
   icon: Icon,
   label,
+  downloadLink,
 }: LinkComponentProps) {
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -24,8 +26,9 @@ export default function LinkComponent({
     >
       <a
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        {...(downloadLink
+          ? { download: true }
+          : { target: "_blank", rel: "noopener noreferrer" })}
       >
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2">

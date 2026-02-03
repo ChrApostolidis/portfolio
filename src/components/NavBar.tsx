@@ -67,7 +67,11 @@ export default function NavBar({ onNavigate }: NavBarProps) {
               <NavLink handleNavClick={handleNavClick} sectionId="Contact" />
             </nav>
             <div className="hidden md:block lg:block">
-              <MainButton className="border-white/50 hover:text-black hover:bg-primary/90 hover:border-primary">Resume</MainButton>
+              <MainButton className="border-white/50 hover:text-black hover:bg-primary/90 hover:border-primary">
+                <a href="/files/resume.pdf" download>
+                  Resume
+                </a>
+              </MainButton>
             </div>
             <div
               className={`md:hidden flex justify-end ${isMenuOpen ? "z-10" : ""}`}

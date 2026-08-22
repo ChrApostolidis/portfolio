@@ -37,23 +37,31 @@ export default function AboutSection({ onNavigate }: AboutSectionProps) {
         className="mt-6 lg:mx-20 mx-5 space-y-5 max-w-3xl"
       >
         <p className="border-b pb-4  border-accent text-lg lg:text-2xl font-medium leading-snug">
-          Entry-level Web Developer focused on{" "}
+          Full Stack Developer interning at{" "}
+          <a
+            href="https://ilo.com.gr/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors duration-300"
+          >
+            Ilo Share Your
+          </a>
+          , a lead capture SaaS platform, where I{" "}
           <span className="text-primary font-semibold">
-            full-stack development, modern UI, and building real-world
-            applications
+            build and ship features end-to-end using Next.js, React, and
+            Laravel.
           </span>
-          .
         </p>
         <motion.p variants={itemVariants}>
           My main stack includes
           <span className="ml-0.5 text-primary font-medium">
-            React, Node.js, Tailwind CSS, MongoDB, and TypeScript
+            React, Node.js, MongoDB, and TypeScript
           </span>
           .
         </motion.p>
 
         <motion.p variants={itemVariants}>
-          What started two years ago as curiosity about how websites work
+          What started three years ago as curiosity about how websites work
           gradually became a habit of building, breaking, and rebuilding things
           to understand them better.
         </motion.p>

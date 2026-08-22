@@ -28,7 +28,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
           className="bg-primary hover:bg-[#4F96F0] text-black border-black"
           onClick={() => onNavigate && onNavigate("Contact")}
         >
-          <a href="#Contact">Contact Me</a>
+          Contact Me
         </MainButton>
         <div className="flex gap-4">
           <a
@@ -41,7 +41,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.linkedin.com/in/xristos-apostolidis-5aa0912ab/"
+            href="https://www.linkedin.com/in/christos-apostolidis/"
           >
             <FaLinkedin
               size={30}

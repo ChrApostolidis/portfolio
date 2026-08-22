@@ -5,8 +5,10 @@ import {
   FaGitAlt,
   FaReact,
   FaNodeJs,
+  FaLaravel,
+  FaPhp,
 } from "react-icons/fa";
-import { SiMongodb, SiExpress } from "react-icons/si";
+import { SiMongodb, SiExpress, SiSpring } from "react-icons/si";
 import { BiLogoTypescript, BiLogoPostgresql } from "react-icons/bi";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import type { IconType } from "react-icons";
@@ -69,6 +71,13 @@ export const SkillsData: Record<string, Skill[]> = {
       render: "icon",
     },
     {
+      name: "Next.js",
+      icon: RiNextjsFill,
+      color: "#ffffff",
+      size: 60,
+      render: "icon",
+    },
+    {
       name: "React",
       icon: FaReact,
       color: "#61DAFB",
@@ -106,13 +115,6 @@ export const SkillsData: Record<string, Skill[]> = {
   ],
   Experience: [
     {
-      name: "Next.js",
-      icon: RiNextjsFill,
-      color: "#ffffff",
-      size: 60,
-      render: "icon",
-    },
-    {
       name: "Python",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
       size: 60,
@@ -148,6 +150,27 @@ export const SkillsData: Record<string, Skill[]> = {
       name: "Redis",
       icon: DiRedis,
       color: "#DC382D",
+      size: 60,
+      render: "icon",
+    },
+    {
+      name: "Laravel",
+      icon: FaLaravel,
+      color: "#FF2D20",
+      size: 60,
+      render: "icon",
+    },
+    {
+      name: "PHP",
+      icon: FaPhp,
+      color: "#777BB4",
+      size: 75,
+      render: "icon",
+    },
+    {
+      name: "Spring",
+      icon: SiSpring,
+      color: "#6DB33F",
       size: 60,
       render: "icon",
     },

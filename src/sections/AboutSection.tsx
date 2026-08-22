@@ -86,7 +86,7 @@ export default function AboutSection({ onNavigate }: AboutSectionProps) {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.linkedin.com/in/xristos-apostolidis-5aa0912ab/"
+            href="https://www.linkedin.com/in/christos-apostolidis/"
           >
             <FaLinkedin
               size={30}

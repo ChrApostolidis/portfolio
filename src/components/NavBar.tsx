@@ -33,6 +33,9 @@ export default function NavBar({ onNavigate }: NavBarProps) {
   // Lock scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [isMenuOpen]);
 
   return (
@@ -84,7 +87,7 @@ export default function NavBar({ onNavigate }: NavBarProps) {
           </div>
         </header>
       </div>
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         {isMenuOpen && (
           <>
             <motion.div
@@ -176,7 +179,7 @@ export default function NavBar({ onNavigate }: NavBarProps) {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://www.linkedin.com/in/xristos-apostolidis-5aa0912ab/"
+                  href="https://www.linkedin.com/in/christos-apostolidis/"
                 >
                   <FaLinkedin
                     size={30}

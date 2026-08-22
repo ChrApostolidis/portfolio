@@ -102,3 +102,15 @@ body,
 }
 
 
+
+/* On mobile, navigation uses native scrollIntoView on these ids; keep
+   their tops clear of the fixed header. */
+@media (max-width: 1023px) {
+  #Hero,
+  #About,
+  #Skills,
+  #Projects,
+  #Contact {
+    scroll-margin-top: 5rem;
+  }
+}

@@ -26,7 +26,7 @@ export default function LinkContainer() {
       >
         <div className="flex flex-col lg:flex-row gap-2">
           <LinkComponent
-            href="https://www.linkedin.com/in/xristos-apostolidis-5aa0912ab/"
+            href="https://www.linkedin.com/in/christos-apostolidis/"
             icon={FaLinkedin}
             label="Linkedin"
             downloadLink={false}

@@ -9,7 +9,10 @@ export default function ProjectsSection({
   showHeader: boolean;
 }) {
   return (
-    <div id="Projects" className="lg:mx-40">
+    // Padding rather than margins so the section can be capped and centered.
+    // Below 1640px this matches the old lg:mx-40 exactly; above it the columns
+    // stop growing, which keeps the gap beside each 448px image from widening.
+    <div id="Projects" className="w-full mx-auto max-w-[1640px] lg:px-40">
       {showHeader && (
         <div className="relative flex text-left lg:justify-start items-center ml-4 mb-4 lg:mb-0">
           <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/80">

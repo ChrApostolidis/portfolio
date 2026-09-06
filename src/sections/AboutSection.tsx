@@ -48,7 +48,7 @@ export default function AboutSection({ onNavigate }: AboutSectionProps) {
           </a>
           , a lead capture SaaS platform, where I{" "}
           <span className="text-primary font-semibold">
-            build and ship features end-to-end using Next.js, React, and
+            build and ship features end to end using Next.js, React, and
             Laravel.
           </span>
         </p>
@@ -71,8 +71,8 @@ export default function AboutSection({ onNavigate }: AboutSectionProps) {
         </motion.p>
 
         <motion.p variants={itemVariants}>
-          Currently focused on building production-ready projects and sharpening
-          my full-stack skills.
+          Currently focused on building production ready projects and sharpening
+          my full stack skills.
         </motion.p>
       </motion.div>
 

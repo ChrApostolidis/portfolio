@@ -19,6 +19,26 @@ export const ProjectsDataFirstSection = [
     alingLeftOrRight: "left",
   },
   {
+    title: "Life Tracker",
+    description:
+      "Life Tracker is a full stack life tracking app that keeps tasks, notes, money, books, and habits in one dark themed dashboard, with an RPG layer that turns daily consistency into levels, streaks, and achievements.",
+    url: "/LifeTrackerApp.png",
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "CSS Modules",
+      "Java",
+      "Spring Boot",
+      "SQLite",
+    ],
+    githubLink: "https://github.com/ChrApostolidis/life-tracker",
+    alingLeftOrRight: "right",
+  },
+];
+
+export const ProjectsDataSecondSection = [
+  {
     title: "Workout Tracker",
     description:
       "Workout Tracker is full stack application that helps users track their workouts and progress.",
@@ -34,15 +54,12 @@ export const ProjectsDataFirstSection = [
     ],
     demoLink: "https://workout-tracker-cga8.onrender.com/",
     githubLink: "https://github.com/ChrApostolidis/Workout_Tracker",
-    alingLeftOrRight: "right",
+    alingLeftOrRight: "left",
   },
-];
-
-export const ProjectsDataSecondSection = [
   {
     title: "Ghost VPN",
     description:
-      "A modern, responsive frontend for GhostVPN — a privacy-focused VPN landing site and marketing UI.",
+      "A modern, responsive frontend for GhostVPN, a privacy focused VPN landing site and marketing UI.",
     url: "/GhostVpnApp.png",
     techStack: [
       "React",
@@ -52,21 +69,6 @@ export const ProjectsDataSecondSection = [
     ],
     demoLink: "https://ghost-vpn-front-end.vercel.app/",
     githubLink: "https://github.com/ChrApostolidis/Ghost-VPN-FrontEnd",
-    alingLeftOrRight: "left",
-  },
-  {
-    title: "The Growth Hub",
-    description:
-      "The Growth Hub is a full-stack blog application where users can read and create blog posts focused on entrepreneurship, technology, business, and personal growth.",
-    url: "/TheGrowthHubApp.png",
-    techStack: [
-      "Node.js",
-      "Express.js",
-      "EJS",
-      "Axios",
-    ],
-    demoLink: "https://github.com/ChrApostolidis/The_Growth_Hub",
-    githubLink: "https://github.com/ChrApostolidis/The_Growth_Hub",
     alingLeftOrRight: "right",
   },
 ];

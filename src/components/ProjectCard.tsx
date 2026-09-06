@@ -7,7 +7,7 @@ export type ProjectCardProps = {
   title: string;
   description: string;
   techStack: string[];
-  demoLink: string;
+  demoLink?: string;
   githubLink: string;
   alingLeftOrRight: string;
 };
@@ -53,11 +53,11 @@ export default function ProjectCard({
             initial="hidden"
             whileInView="visible"
             viewport={viewportSettings}
-            className="relative max-w-md mx-auto lg:mx-0"
+            className="relative w-full max-w-[448px] mx-auto lg:mx-0"
           >
             <div className="absolute inset-0 bg-linear-to-tr from-cyan-500/20 to-transparent rounded-2xl blur-2xl"></div>
             <img
-              className="relative w-full rounded-2xl shadow-xl border border-white/10"
+              className="relative w-full h-[285px] object-cover rounded-2xl shadow-xl border border-white/10"
               src={url}
               alt={`Image of the ${title}`}
             />
@@ -81,14 +81,16 @@ export default function ProjectCard({
             </div>
 
             <div className="flex gap-4 justify-center lg:justify-start pt-2">
-              <a
-                href={demoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary/80 text-black font-semibold hover:bg-primary transition"
-              >
-                View Demo
-              </a>
+              {demoLink && (
+                <a
+                  href={demoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary/80 text-black font-semibold hover:bg-primary transition"
+                >
+                  View Demo
+                </a>
+              )}
 
               <a
                 href={githubLink}
@@ -121,14 +123,16 @@ export default function ProjectCard({
             </div>
 
             <div className="flex gap-4 justify-center lg:justify-start pt-2">
-              <a
-                href={demoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary/80 text-black font-semibold hover:bg-primary transition"
-              >
-                View Demo
-              </a>
+              {demoLink && (
+                <a
+                  href={demoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary/80 text-black font-semibold hover:bg-primary transition"
+                >
+                  View Demo
+                </a>
+              )}
 
               <a
                 href={githubLink}
@@ -146,11 +150,11 @@ export default function ProjectCard({
             initial="hidden"
             whileInView="visible"
             viewport={viewportSettings}
-            className="relative max-w-md mx-auto lg:mx-0"
+            className="relative w-full max-w-[448px] mx-auto lg:ml-auto lg:mr-0"
           >
             <div className="absolute inset-0 bg-linear-to-tl from-cyan-500/20 to-transparent rounded-2xl blur-2xl"></div>
             <img
-              className="relative w-full rounded-2xl shadow-xl border border-white/10"
+              className="relative w-full h-[285px] object-cover rounded-2xl shadow-xl border border-white/10"
               src={url}
               alt={`Image of the ${title}`}
             />

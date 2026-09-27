@@ -37,7 +37,7 @@ export default function AboutSection({ onNavigate }: AboutSectionProps) {
         className="mt-6 lg:mx-20 mx-5 space-y-5 max-w-3xl"
       >
         <p className="border-b pb-4  border-accent text-lg lg:text-2xl font-medium leading-snug">
-          Full Stack Developer interning at{" "}
+          Full Stack Developer who completed an internship at{" "}
           <a
             href="https://ilo.com.gr/"
             target="_blank"
@@ -46,33 +46,33 @@ export default function AboutSection({ onNavigate }: AboutSectionProps) {
           >
             Ilo Share Your
           </a>
-          , a lead capture SaaS platform, where I{" "}
+          , a lead capture SaaS with 5,000+ users, where I{" "}
           <span className="text-primary font-semibold">
-            build and ship features end to end using Next.js, React, and
-            Laravel.
+            shipped features end to end using Next.js, React, and Laravel.
           </span>
         </p>
         <motion.p variants={itemVariants}>
           My main stack includes
           <span className="ml-0.5 text-primary font-medium">
-            React, Node.js, MongoDB, and TypeScript
+            React, Next.js, Node.js, and Laravel
           </span>
           .
         </motion.p>
 
         <motion.p variants={itemVariants}>
-          What started three years ago as curiosity about how websites work
-          gradually became a habit of building, breaking, and rebuilding things
-          to understand them better.
+          I started coding at 18 out of curiosity about how websites work, and
+          it quickly became a habit of building, breaking, and rebuilding things
+          until I understood them.
         </motion.p>
         <motion.p variants={itemVariants}>
-          I approach problems with an engineering mindset breaking them down,
-          thinking critically, and continuously improving my solutions.
+          I treat my projects as real products rather than exercises, breaking
+          problems down, thinking through the details, and improving them with
+          every iteration.
         </motion.p>
 
         <motion.p variants={itemVariants}>
-          Currently focused on building production ready projects and sharpening
-          my full stack skills.
+          Currently focused on building production ready applications and
+          taking features from idea to launch.
         </motion.p>
       </motion.div>
 

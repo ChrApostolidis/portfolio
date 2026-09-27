@@ -16,7 +16,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
         <h1 className="text-5xl text-center tracking-wider lg:text-7xl">
           I'm Christos Apostolidis
         </h1>
-        <h2 className="text-3xl lg:text-4xl tracking-wide">Web Developer</h2>
+        <h2 className="text-3xl lg:text-4xl tracking-wide">Full Stack Developer</h2>
       </div>
       <div className="flex justify-center items-center">
         <p className="text-lg lg:text-xl text-center text-text-main">

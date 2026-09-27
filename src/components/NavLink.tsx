@@ -4,18 +4,25 @@ interface NavLinkProps {
     sectionId: string,
   ) => void;
   sectionId: string;
+  isActive: boolean;
 }
 
-export default function NavLink({ handleNavClick, sectionId }: NavLinkProps) {
+export default function NavLink({
+  handleNavClick,
+  sectionId,
+  isActive,
+}: NavLinkProps) {
   return (
     <a
       href={`#${sectionId}`}
       onClick={(e) => handleNavClick(e, sectionId)}
-      className="relative pb-2 lg:text-xl text-gray-300 hover:text-white
-                after:absolute after:bottom-0 after:left-1/2
-                after:h-0.5 after:w-0 after:bg-primary
+      aria-current={isActive ? "true" : undefined}
+      className={`relative pb-2 lg:text-xl hover:text-white
+                after:absolute after:bottom-0
+                after:h-0.5 after:bg-primary
                 after:transition-all after:duration-300
-                hover:after:w-full hover:after:left-0"
+                hover:after:w-full hover:after:left-0
+                ${isActive ? "text-white after:w-full after:left-0" : "text-gray-300 after:w-0 after:left-1/2"}`}
     >
       {sectionId}
     </a>

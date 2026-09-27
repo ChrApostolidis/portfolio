@@ -17,6 +17,9 @@
   --border-soft: rgba(20,20,20,0.2);
 }
 
+/* Shorter viewports such as 15.6" laptops, used to compact full-screen panels. */
+@custom-variant short (@media (max-height: 820px));
+
 @theme inline {
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);

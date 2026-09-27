@@ -6,11 +6,20 @@ import { MdEmail } from "react-icons/md";
 import { AnimatePresence, motion } from "framer-motion";
 import NavLink from "./NavLink";
 
+const NAV_SECTIONS = ["About", "Experience", "Skills", "Projects", "Contact"];
+
+// Mobile menu also links back to the hero, labelled "Home".
+const MOBILE_NAV_SECTIONS = [
+  { sectionId: "Hero", label: "Home" },
+  ...NAV_SECTIONS.map((sectionId) => ({ sectionId, label: sectionId })),
+];
+
 interface NavBarProps {
   onNavigate?: (sectionId: string) => void;
+  activeSection: string;
 }
 
-export default function NavBar({ onNavigate }: NavBarProps) {
+export default function NavBar({ onNavigate, activeSection }: NavBarProps) {
   const [isSticky, setIsSticky] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -64,10 +73,14 @@ export default function NavBar({ onNavigate }: NavBarProps) {
               </a>
             </div>
             <nav className="hidden md:flex lg:flex items-center gap-4">
-              <NavLink handleNavClick={handleNavClick} sectionId="About" />
-              <NavLink handleNavClick={handleNavClick} sectionId="Skills" />
-              <NavLink handleNavClick={handleNavClick} sectionId="Projects" />
-              <NavLink handleNavClick={handleNavClick} sectionId="Contact" />
+              {NAV_SECTIONS.map((sectionId) => (
+                <NavLink
+                  key={sectionId}
+                  handleNavClick={handleNavClick}
+                  sectionId={sectionId}
+                  isActive={activeSection === sectionId}
+                />
+              ))}
             </nav>
             <div className="hidden md:block lg:block">
               <MainButton className="border-white/50 hover:text-black hover:bg-primary/90 hover:border-primary">
@@ -114,56 +127,22 @@ export default function NavBar({ onNavigate }: NavBarProps) {
                 <MainButton>Resume</MainButton>
               </div>
               <nav className="flex flex-col text-left text-3xl gap-4">
-                <a
-                  href="#Hero"
-                  onClick={(e) => {
-                    handleNavClick(e, "Hero");
-                    setIsMenuOpen(false);
-                  }}
-                  className="text-main-text hover:text-primary"
-                >
-                  Home
-                </a>
-                <a
-                  href="#About"
-                  onClick={(e) => {
-                    handleNavClick(e, "About");
-                    setIsMenuOpen(false);
-                  }}
-                  className="text-main-text hover:text-primary"
-                >
-                  About
-                </a>
-                <a
-                  href="#Skills"
-                  onClick={(e) => {
-                    handleNavClick(e, "Skills");
-                    setIsMenuOpen(false);
-                  }}
-                  className="text-main-text hover:text-primary"
-                >
-                  Skills
-                </a>
-                <a
-                  href="#Projects"
-                  onClick={(e) => {
-                    handleNavClick(e, "Projects");
-                    setIsMenuOpen(false);
-                  }}
-                  className="text-main-text hover:text-primary"
-                >
-                  Projects
-                </a>
-                <a
-                  href="#Contact"
-                  onClick={(e) => {
-                    handleNavClick(e, "Contact");
-                    setIsMenuOpen(false);
-                  }}
-                  className="text-main-text hover:text-primary"
-                >
-                  Contact
-                </a>
+                {MOBILE_NAV_SECTIONS.map(({ sectionId, label }) => (
+                  <a
+                    key={sectionId}
+                    href={`#${sectionId}`}
+                    onClick={(e) => {
+                      handleNavClick(e, sectionId);
+                      setIsMenuOpen(false);
+                    }}
+                    aria-current={
+                      activeSection === sectionId ? "true" : undefined
+                    }
+                    className={`hover:text-primary ${activeSection === sectionId ? "text-primary" : "text-main-text"}`}
+                  >
+                    {label}
+                  </a>
+                ))}
               </nav>
               <div className="flex justify-center items-center gap-8">
                 <a
